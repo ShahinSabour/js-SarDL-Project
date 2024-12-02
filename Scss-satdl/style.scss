@@ -1,0 +1,24 @@
+@import "variables";
+@import "mixin";
+
+
+@include openSans();
+@include Awesome();
+
+body{
+  direction: ltr;
+  font-family:SansRegualr;
+  i{
+    font-family: AwesomeRegular !important;
+  }
+}
+
+@import "1-index";
+@import "2-product";
+@import "3-categories";
+@import "4-prouduct-file";
+@import "5-download";
+@import "6-search";
+@import "7-upload";
+@import "info";
+

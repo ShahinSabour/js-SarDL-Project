@@ -1,0 +1,137 @@
+.download-files_6{
+  table{
+    thead{
+      tr{
+        th{
+          &:first-child{
+            width: 16% !important;
+          }
+        }
+      }
+    }
+    tbody{
+      tr{
+
+        @include break_custom(100, 768){
+          border-bottom: 1px solid #e3e1e1;
+          padding: 25px 0;
+        }
+        td{
+          &:first-child{
+            @include break_custom(100, 768){
+              padding: 0 !important;
+            }
+            a{
+              margin-bottom: 12px;
+              display: inline-block;
+            }
+            img{
+              margin: 0;
+            }
+          }
+          div, a{
+            &:first-child{
+              color: #4B4CA8;
+              text-decoration: none;
+            }
+            &:last-child{
+              color: #757599;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.detail-search_1{
+  background-image:linear-gradient(to right,  #32348b, #4849a5);
+  margin-top: 30px;
+  border-radius: 20px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  padding: 0 8% 50px;
+  margin-bottom: 50px;
+  .title{
+    font-size: 43px;
+    color: #fff;
+    font-family: SansLight;
+    display: flex;
+    margin-top: 45px;
+    margin-bottom: 35px;
+    span{
+      font-weight: bold;
+    }
+  }
+  .detail-search-box{
+    background: #fff;
+    padding: 4px;
+    width: 100%;
+    border-radius: 40px;
+    height: 55px;
+    margin-bottom: 30px;
+    @include break(xs){
+      margin-bottom: 15px;
+    }
+    input{
+      width: 92%;
+      height: 100%;
+      border: none;
+      background: none;
+      color: #000;
+      padding-top: 2px;
+      font-size: 20px;
+      @include break(md){
+        width: 90%;
+      }
+      @include break(s){
+        width: 80%;
+      }
+      @include break(xs){
+        width: 75%;
+      }
+      &:focus{
+        outline: none;
+      }
+      &::placeholder{
+        color: rgba(178, 178, 178, 0.8);
+        text-align: left;
+        font-size: 25px;
+        @include break(s){
+          font-size: 15px;
+        }
+        @include break(xs){
+          font-size: 13px;
+        }
+      }
+    }
+    label{
+      float: right;
+      background: #f9b02d;
+      width: 47px;
+      height: 47px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #fff;
+      cursor: pointer;
+      transition: ease 0.3s;
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .selection{
+    .selection-button{
+      i{
+        color: #4B4CA8;
+        font-size: 30px;
+        font-family: "Font Awesome 6 Pro" !important;
+      }
+    }
+  }
+}

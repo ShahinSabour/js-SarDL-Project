@@ -1,0 +1,194 @@
+@mixin padding(){
+  padding-right:0;
+  padding-left:0;
+}
+
+@mixin rtl(){
+  direction: rtl;
+  text-align: right;
+}
+
+@mixin marginPadding($marg, $padd){
+  margin:$marg;
+  padding:$padd;
+}
+
+@mixin widthHeight($w, $h){
+  height:$h;
+  width:$w;
+}
+
+@mixin backColor($back, $color){
+  background-color:$back;
+  color:$color;
+}
+
+@mixin poistion($pos,$top:0,$right:0,$bott:0,$left:0){
+  position: $pos;
+  top:$top;
+  bottom:$bott;
+  left:$left;
+  right:$right;
+}
+
+@mixin background($img,$attach,$pos,$rep,$size){
+  background-image:$img;
+  background-attachment: $attach;
+  background-position: $pos;
+  background-repeat: $rep;
+  background-size: $size;
+}
+
+@mixin Awesome(){
+
+  @font-face {
+    font-family: AwesomeLight;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../webfonts/new/fa-light-300.woff2') format('woff2')  /* Chrome36+, Opera24+*/
+    //url('../webfonts/fa-light-300.woff') format('woff')  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  }
+
+  @font-face {
+    font-family: AwesomeRegular;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../webfonts/new/fa-regular-400.woff2') format('woff2'),  /* Chrome36+, Opera24+*/
+    url('../webfonts/new/fa-regular-400.woff2') format('woff2'),
+    url('../webfonts/new/fa-duotone-900.woff2') format('woff2'),
+    url('../webfonts/new/fa-brands-400.woff2') format('woff2')
+  }
+
+  @font-face {
+    font-family: AwesomeBold;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../webfonts/new/fa-solid-900.woff2') format('woff2'),  /* Chrome36+, Opera24+*/
+    url('../webfonts/fa-solid-900.woff') format('woff')  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  }
+
+}
+
+@mixin openSans(){
+
+  @font-face {
+    font-family: SansLight;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../webfonts/openSans/OpenSans-Light.ttf')
+  }
+
+  @font-face {
+    font-family: SansRegualr;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../webfonts/openSans/OpenSans-Regular.ttf')
+  }
+
+  @font-face {
+    font-family: SansSemiBold;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../webfonts/openSans/OpenSans-Semibold.ttf')
+  }
+
+  @font-face {
+    font-family: SansBold;
+    src: url('../webfonts/openSans/OpenSans-Bold.ttf')
+  }
+
+}
+
+
+@mixin font-title($weight,$size){
+  font:$weight $size isans;
+}
+
+@mixin font-num($weight,$size) {
+  font: $weight $size numisans;
+}
+
+@mixin font-bold($size){
+  font:$size boldisans;
+}
+
+@mixin a-link($C){
+  text-decoration: none;
+  color: $C;
+}
+
+/* Example for down triangles
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #f00;
+*/
+@mixin triangle($top,$right,$bottom,$left){
+  @include widthHeight(0,0);
+  border-top:$top;
+  border-right:$right;
+  border-bottom:$bottom;
+  border-left:$left;
+}
+
+@mixin border-group($border,$border-radius){
+  border: $border;
+  border-radius: $border-radius;
+}
+
+
+@mixin placeholderText(){
+  &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #fff;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #fff;
+    opacity:  1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #fff;
+    opacity:  1;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #fff;
+  }
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    color:    #fff;
+  }
+
+  &::placeholder { /* Most modern browsers support this now. */
+    color:    #fff;
+  }
+}
+
+
+@mixin break($media){
+  @if $media == xs { //  X < 450
+      @media only screen and (max-width: $x-small + "px"){ @content; }
+  }@else if $media == s{ // 450 < X < 768
+    @media only screen and (min-width: $x-small + 1 + "px") and ( max-width: $small - 1 + "px"){ @content; }
+  }@else if $media == md{ // 768 < X < 992
+    @media only screen and (min-width: $small + "px") and ( max-width: $average - 1 + "px"){ @content; }
+  }@else if $media == lg{ // 992 < X < 1200
+    @media only screen and (min-width: $average + "px") and ( max-width: $large - 1 + "px"){ @content; }
+  }@else if $media == xl{ // 1200 < X < 1440
+    @media only screen and (min-width: $large + "px") and ( max-width: $x-large - 1 + "px"){ @content; }
+  }@else if $media == xxl{ // 1440 < X < 1920
+    @media only screen and (min-width: $x-large + 1 + "px") and ( max-width: $xx-large - 1 + "px"){ @content; }
+  }@else if $media == xxx{ // 1920 < X
+    @media only screen and ( max-width: $very-latge - 1 + "px"){ @content; }
+  }
+
+}
+
+
+@mixin break_custom($min,$max){
+  @media only screen and (min-width: $min + "px") and ( max-width: $max  + "px"){ @content; }
+}
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+
+.products-3{
+  border-radius: 20px;
+  margin: 30px 0;
+  background: #ffff;
+  padding-top: 20px;
+  .title{
+    padding: 10px 30px;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include break_custom(100,764){
+      flex-direction: column;
+      text-align: center;
+    }
+    .cover{
+      @include break_custom(100,768){
+        margin-bottom: 15px;
+      }
+    }
+    img{
+      margin-right: 20px;
+    }
+    i{
+      color: #f9b02d;
+      font-size: 25px;
+      margin-right: 20px;
+      font-family: "Font Awesome 6 Pro" !important;
+    }
+    .t1{
+      font-family: SansSemiBold;;
+    }
+    .t1::first-letter{
+      font-family: SansBold;
+      font-size: 21px;
+      font-weight: bold;
+    }
+    .t2{
+      font-family: SansLight;
+    }
+
+  }
+
+  .content{
+    padding: 20px;
+    padding-top: 10px;
+    .conner-cover{
+      display: flex;
+      background: #fff;
+      @include break_custom(100,992){
+        flex-wrap: wrap;
+      }
+
+      .equipment-box{
+        background: #f5f5fa;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 10px;
+        height: 180px;
+        border-radius: 20px;
+        text-decoration: none;
+        transition: ease 0.3s;
+        @include break(md){
+          width: 30%;
+          margin-bottom: 20px;
+        }
+        @include break(s){
+          width: 45%;
+          margin: 0 2.4%;
+          margin-bottom: 20px;
+        }
+        @include break(xs){
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        &:hover{
+          background: #e0e0f1;
+        }
+        i{
+          margin-bottom: 32px;
+          font-size: 40px;
+          color: #4b4ca8;
+          transition: ease 0.3s;
+        }
+        div{
+          color: #000;
+          font-size: 15px;
+          transition: ease 0.3s;
+        }
+      }
+      .active-box{
+        background: #4b4ca8;
+        i{
+          color: #f9a72c;
+        }
+        div{
+          color: #fff;
+        }
+      }
+    }
+
+  }
+}
