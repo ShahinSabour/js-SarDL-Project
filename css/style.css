@@ -70,6 +70,9 @@ header {
   }
 }
 
+.body1 {
+  padding-top: 165px;
+}
 .body {
   padding-top: 100px;
 }
@@ -4592,4 +4595,35 @@ header {
 }
 .search-box{
   display: flex;
+}
+
+.notice-banner{
+  height: auto;
+  padding: 5px 0;
+  background-color: #15d09c;
+  span{
+    font-weight: bold;
+  }
+  p{
+    display: inline;
+    font-size: 13px;
+  }
+  .group{
+    display: inline;
+    margin-left: 10px;
+    a{
+      font-size: 10px;
+      padding: 3px 6px;
+      border-radius: 5px;
+      list-style-type: none;
+      background-color: lightcoral;
+      color: #fff;
+      text-decoration: none;
+      &:hover{
+        opacity: 0.8;
+        transition: 0.3s;
+      }
+    }
+  }
+  
 }
